@@ -15,7 +15,7 @@ export function calculatePortfolioPerformance(initialInvestment: number, current
         ? "No change. Your portfolio is holding steady."
         : percentageChange >= -10
         ? "Minor loss. Stay calm and review your options."
-        : "Significant loss. Review your portfolio strategy."
+        : "Significant loss. Review your portfolio strategy.";
 
     return {
         initialInvestment,
