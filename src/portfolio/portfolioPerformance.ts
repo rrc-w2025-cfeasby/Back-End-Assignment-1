@@ -1,0 +1,25 @@
+import { PortfolioPerformance } from "./portfolioPerformance.types";
+
+export function calculatePortfolioPerformance(initialInvestment: number, currentValue: number): PortfolioPerformance {
+    const profitOrLoss = currentValue - initialInvestment;
+    const percentageChange = (profitOrLoss / initialInvestment) * 100;
+
+    const performanceSummary =
+        percentageChange >= 30
+        ? "Excellent performance! Your investments are doing great."
+        : percentageChange >= 10
+        ? "Solid gain. Keep monitoring your investments"
+        : percentageChange > 0
+        ? "Modest gain. Your portfolio is growing slowly."
+        : percentageChange < 0 && percentageChange >= -10
+        ? "Performance declined. Consider reviewing your investment strategy."
+        : "No change. Your portfolio is holding steady.";
+
+    return {
+        initialInvestment,
+        currentValue,
+        profitOrLoss,
+        percentageChange,
+        performanceSummary,
+    };
+}
