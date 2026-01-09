@@ -2,7 +2,16 @@ import { Router } from "express";
 
 const router = Router();
 
-// API Health Check Endpoint
+/**
+ * GET /api/v1/health
+ * 
+ * Returns basic service health information including:
+ * - status
+ * - uptime
+ * - timestamp
+ * - version
+ * 
+ */
 router.get("/health", (req, res) => {
     res.json({
         status: "OK",
